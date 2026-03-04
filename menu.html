@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú — Sinfonía Gourmet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <span class="brand__logoWrap">
+          <img class="brand__logo" src="assets/dishes/logo.jpg" alt="Logo Sinfonía Gourmet" />
+        </span>
+        <span class="brand__name"></span>
+      </a>
+
+      <nav class="nav">
+        <a href="menu.html" class="is-current">Menú</a>
+        <a href="contacto.html">Contáctanos</a>
+        <a href="reservas.html" class="nav__cta">Reservar</a>
+      </nav>
+
+      <div class="navSocial" aria-label="Redes sociales">
+        <a class="socialIcon" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4z" />
+            <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+            <path d="M17.8 6.2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg>
+        </a>
+
+        <a class="socialIcon" href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M16 3c.6 3.4 2.6 5.4 6 5.8V11c-2.3-.1-4.2-.9-6-2.4V16a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1V12a3.8 3.8 0 0 0-1.2-.2A4 4 0 1 0 14 16V3h2z" />
+          </svg>
+        </a>
+
+        <a class="socialIcon" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.6 1.6-1.6h1.6V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3H10v8h3.5z" />
+          </svg>
+        </a>
+
+        <a class="socialIcon" href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M18.9 2H22l-6.8 7.8L23 22h-6.8l-5.3-6.6L5 22H2l7.3-8.4L1 2h6.9l4.8 6.1L18.9 2zm-1.2 18h1.7L7.9 4H6.1l11.6 16z" />
+          </svg>
+        </a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobileNav" hidden>
+      <a href="menu.html">Menú</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contáctanos</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="pageHero">
+      <div class="container pageHero__inner">
+        <h1>Menú</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters" role="tablist" aria-label="Categorías del menú">
+          <button class="filter is-active" type="button" data-filter="all">Todo</button>
+          <button class="filter" type="button" data-filter="cafe">Café</button>
+          <button class="filter" type="button" data-filter="reposteria">Repostería</button>
+          <button class="filter" type="button" data-filter="delicatessen">Delicatessen</button>
+          <button class="filter" type="button" data-filter="entradas">Entradas</button>
+          <button class="filter" type="button" data-filter="fuertes">Platos fuertes</button>
+          <button class="filter" type="button" data-filter="postres">Postres</button>
+          <button class="filter" type="button" data-filter="bebidas">Bebidas</button>
+          <button class="filter" type="button" data-filter="wellness">Wellness</button>
+        </div>
+
+        <div class="menuGrid menuGrid--cards" id="menuGrid">
+
+          <!-- Café -->
+          <article class="dishCard menuItem" data-category="cafe">
+            <div class="dishCard__img">
+              <img src="assets/dishes/coffee-etude.jpg" alt="Etude No. 1" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Etude No. 1 — Granos de Altura (Etiopía)</h3>
+                <span class="menuItem__price">$18.50</span>
+              </div>
+              <p><strong>Notas:</strong> Jazmín, bergamota y miel. <strong>Tueste:</strong> Medio-ligero. (250g)</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Café</span><span class="pill">Estrella</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="cafe">
+            <div class="dishCard__img">
+              <img src="assets/dishes/coffee-concerto.jpg" alt="Concerto Blend" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/coffee-concerto.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Concerto Blend — Selección de la Casa</h3>
+                <span class="menuItem__price">$16.00</span>
+              </div>
+              <p><strong>Notas:</strong> Chocolate amargo, nuez moscada y caramelo. <strong>Tueste:</strong> Medio. (250g)</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Café</span><span class="pill">House</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Repostería -->
+          <article class="dishCard menuItem" data-category="reposteria">
+            <div class="dishCard__img">
+              <img src="assets/dishes/croissant.jpg" alt="Croissant" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/croissant.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Croissant de Mantequilla de Normandía</h3>
+                <span class="menuItem__price">$5.80</span>
+              </div>
+              <p>48 horas de fermentación, alveolado perfecto y aroma a avellana tostada.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Repostería</span><span class="pill">Estrella</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="reposteria">
+            <div class="dishCard__img">
+              <img src="assets/dishes/macarons.jpg" alt="Macarons" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/macarons.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Cofre de Macarons de Autor</h3>
+                <span class="menuItem__price">$12.90</span>
+              </div>
+              <p><strong>Sabores:</strong> Lavanda, Pistacho de Sicilia y Café Espresso.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Repostería</span><span class="pill">Edición</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Delicatessen -->
+          <article class="dishCard menuItem" data-category="delicatessen">
+            <div class="dishCard__img">
+              <img src="assets/dishes/manchego.jpg" alt="Manchego" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/manchego.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Queso Manchego DOP (12 meses)</h3>
+                <span class="menuItem__price">$9.50</span>
+              </div>
+              <p>Sabor intenso con notas de frutos secos. (Porción)</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Delicatessen</span><span class="pill">Curación</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="delicatessen">
+            <div class="dishCard__img">
+              <img src="assets/dishes/olive-oil.jpg" alt="Aceite" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/olive-oil.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Aceite de Oliva EV “Sinfonía Primicia”</h3>
+                <span class="menuItem__price">$14.00</span>
+              </div>
+              <p><strong>Origen:</strong> cosecha temprana, notas verdes y picor equilibrado.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Delicatessen</span><span class="pill">Marca</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entradas -->
+          <article class="dishCard menuItem" data-category="entradas">
+            <div class="dishCard__img">
+              <img src="assets/dishes/ceviche.jpg" alt="Ceviche" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/ceviche.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Ceviche de camarón cítrico</h3>
+                <span class="menuItem__price">$12.00</span>
+              </div>
+              <p>Camarón fresco, cítricos, cebolla morada, crocante de maíz y aceite de hierbas.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Entradas</span><span class="pill">Fresco</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="entradas">
+            <div class="dishCard__img">
+              <img src="assets/dishes/carpaccio.jpg" alt="Carpaccio" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/carpaccio.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Carpaccio de res</h3>
+                <span class="menuItem__price">$14.00</span>
+              </div>
+              <p>Láminas finas, parmesano, rúcula y aceite cítrico.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Entradas</span><span class="pill">Clásico</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="entradas">
+            <div class="dishCard__img">
+              <img src="assets/dishes/tartare.jpg" alt="Tartar" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/tartare.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Tartar de atún & ajonjolí</h3>
+                <span class="menuItem__price">$15.50</span>
+              </div>
+              <p>Atún, lima, soya suave, ajonjolí tostado y crocante artesanal.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Entradas</span><span class="pill">Autor</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fuertes -->
+          <article class="dishCard menuItem" data-category="fuertes">
+            <div class="dishCard__img">
+              <img src="assets/dishes/risotto.jpg" alt="Risotto" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/risotto.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Risotto trufado</h3>
+                <span class="menuItem__price">$24.00</span>
+              </div>
+              <p>Arroz arborio, hongos, crema ligera y aceite de trufa.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Fuertes</span><span class="pill">Signature</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="fuertes">
+            <div class="dishCard__img">
+              <img src="assets/dishes/steak.jpg" alt="Filete" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/steak.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Filete en salsa de vino</h3>
+                <span class="menuItem__price">$26.00</span>
+              </div>
+              <p>Sellado perfecto, papas rústicas y demi-glace.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Fuertes</span><span class="pill">Premium</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="fuertes">
+            <div class="dishCard__img">
+              <img src="assets/dishes/salmon.jpg" alt="Salmón" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/salmon.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Salmón a la mantequilla</h3>
+                <span class="menuItem__price">$22.00</span>
+              </div>
+              <p>Salsa limón-eneldo, vegetales glaseados y puré suave.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Fuertes</span><span class="pill">Mar</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="fuertes">
+            <div class="dishCard__img">
+              <img src="assets/dishes/pasta.jpg" alt="Pasta" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/pasta.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Pasta al ragú de autor</h3>
+                <span class="menuItem__price">$19.00</span>
+              </div>
+              <p>Ragú lento, tomate reducido, queso madurado y aceite aromático.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Fuertes</span><span class="pill">Confort</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Postres -->
+          <article class="dishCard menuItem" data-category="postres">
+            <div class="dishCard__img">
+              <img src="assets/dishes/cheesecake.jpg" alt="Cheesecake" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/cheesecake.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Cheesecake de frutos rojos</h3>
+                <span class="menuItem__price">$8.00</span>
+              </div>
+              <p>Cremoso, base de galleta y coulis artesanal.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Postres</span><span class="pill">Top</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="postres">
+            <div class="dishCard__img">
+              <img src="assets/dishes/mousse.jpg" alt="Mousse" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/mousse.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Mousse de chocolate 70%</h3>
+                <span class="menuItem__price">$7.00</span>
+              </div>
+              <p>Textura aireada con toque de sal marina y cacao fino.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Postres</span><span class="pill">Intenso</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bebidas -->
+          <article class="dishCard menuItem" data-category="bebidas">
+            <div class="dishCard__img">
+              <img src="assets/dishes/tonic-citric.jpg" alt="Tónic" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/tonic-citric.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Tónic Citric</h3>
+                <span class="menuItem__price">$6.50</span>
+              </div>
+              <p>Café extraído en frío con agua tónica, pomelo y romero.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Bebidas</span><span class="pill">Temporada</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="bebidas">
+            <div class="dishCard__img">
+              <img src="assets/dishes/latte-pistacho.jpg" alt="Latte" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/latte-pistacho.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Latte de Pistacho & Cardamomo</h3>
+                <span class="menuItem__price">$6.80</span>
+              </div>
+              <p>Leche cremosa con esencia natural de pistacho y un toque de especia.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Bebidas</span><span class="pill">Autor</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wellness -->
+          <article class="dishCard menuItem" data-category="wellness">
+            <div class="dishCard__img">
+              <img src="assets/dishes/golden-milk.jpg" alt="Golden Milk" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/golden-milk.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Golden Milk Sinfonía</h3>
+                <span class="menuItem__price">$6.20</span>
+              </div>
+              <p>Leche de almendras con cúrcuma, jengibre, canela y toque de pimienta negra.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Wellness</span><span class="pill">Alternativa</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dishCard menuItem" data-category="wellness">
+            <div class="dishCard__img">
+              <img src="assets/dishes/tostada-equilibrio.jpg" alt="Equilibrio" onerror="this.style.display='none'; this.parentElement.classList.add('is-placeholder')" />
+              <div class="imgPlaceholder"><span>Imagen</span><small>assets/dishes/tostada-equilibrio.jpg</small></div>
+            </div>
+            <div class="dishCard__body">
+              <div class="dishCard__top">
+                <h3>Tostada “Equilibrio”</h3>
+                <span class="menuItem__price">$9.90</span>
+              </div>
+              <p>Pan de centeno con hummus de remolacha, brotes orgánicos y semillas de calabaza.</p>
+              <div class="dishCard__meta">
+                <span class="menuItem__tag">Wellness</span><span class="pill">Balance</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <div class="footerBrand">
+          <span class="footerBrand__mark">SG</span>
+          <div>
+            <strong>Sinfonía Gourmet</strong>
+            <div class="muted">Menú</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <strong>Contacto</strong>
+        <div class="footerList">
+          <span class="muted">📞 +593 99 123 4567</span>
+          <span class="muted">✉️ reservas@sinfonia-gourmet.ec</span>
+          <a href="contacto.html">Sucursales Ecuador</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <strong>Enlaces</strong>
+        <div class="footerList">
+          <a href="index.html">Inicio</a>
+          <a href="reservas.html">Reservas</a>
+          <a href="contacto.html">Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Sinfonía Gourmet.</span>
+        <a class="toTop" href="#top">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
